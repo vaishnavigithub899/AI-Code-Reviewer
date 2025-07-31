@@ -1,0 +1,130 @@
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  background-color: #0f172a;
+  color: #e2e8f0;
+}
+
+/* Layout */
+main {
+  height: 100%;
+  width: 100%;
+  padding: 1.5rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.left, .right {
+  flex: 1;
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+/* Left Panel */
+.left {
+  background-color: #0a0a0a;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 1rem;
+  border: 1px solid #1e293b;
+}
+
+.left .code {
+  flex: 1;
+  background-color: #0f172a;
+  border: 1px solid #334155;
+  border-radius: 0.6rem;
+  overflow: auto;
+}
+
+/* Code editor style */
+.code pre, .code pre code {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+/* Review Button */
+.left .review {
+  margin-top: 1rem;
+  background: linear-gradient(to right, #3b82f6, #6366f1);
+  color: white;
+  font-weight: bold;
+  font-size: 1.4rem;
+  padding: 0.75rem;
+  border-radius: 0.6rem;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s ease;
+  border: 1px solid #475569;
+}
+
+.left .review:hover {
+  background: linear-gradient(to right, #2563eb, #4f46e5);
+}
+
+/* Right Panel */
+.right {
+  background-color: #1e1e2e;
+  padding: 2rem;
+  font-size: 1.4rem;
+  overflow-y: auto;
+  border: 1px solid #334155;
+}
+
+/* Markdown Headers */
+.right h1, .right h2, .right h3 {
+  color: #7dd3fc;
+  margin-bottom: 0.6rem;
+  font-weight: 600;
+}
+
+/* Markdown Paragraphs */
+.right p {
+  line-height: 1.8;
+  margin-bottom: 1.2rem;
+  font-size: 1.4rem;
+}
+
+/* Code block (``` block) */
+.right pre {
+  background-color: #0f172a;
+  padding: 1.2rem;
+  border: 1px solid #334155;
+  border-radius: 0.6rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.4rem;
+  overflow-x: auto;
+}
+
+/* Inline code */
+.right code {
+  background-color: #334155;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  font-size: 1.4rem;
+  color: #facc15;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  main {
+    flex-direction: column;
+  }
+
+  .left, .right {
+    flex-basis: 100%;
+  }
+
+  .left .review {
+    width: 100%;
+  }
+}
